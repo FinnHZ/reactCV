@@ -1,0 +1,18 @@
+.navigateArea{
+    padding: 0;
+    margin: 0;
+    /* width: 30%;
+    height: 100%; */
+    background: #ddd;
+    background-size: 100% 30%;
+}
+
+.displayArea{
+    padding: 0;
+    margin: 0;
+    /* width: 30%;
+    height: 100%; */
+    background: yellow;
+    background-size: 100% 70%;
+
+}
