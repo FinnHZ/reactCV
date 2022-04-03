@@ -1,0 +1,6 @@
+.letterBackground{
+    background: url(../../img/letterpaper.png) no-repeat center;
+    width: 100%;
+    height: 100%;
+    font-family: Gabriola;
+}
