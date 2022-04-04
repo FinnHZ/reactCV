@@ -11,13 +11,13 @@ import SkillsPage from './pages/Skills_Pg'
 import CollectionPage from './pages/Collection_pg'
 import ManagementPage from './pages/Management_Pg'
 import developerImage from './img/developerImage.jpg'
-//import LoginCom from './components/Login_Com'
+import LoginCOM from './components/Login_Com'
 
 export default class App extends Component {
   // state={boundarytest:''}
   // static getDerivedStateFromError(error){ return {boundarytest: error}}
 
-  state = {}
+  state = {loginstate:"successful"}
 
   toOtherLink = (otherlink) => {
     return ( ()=>{
@@ -27,14 +27,16 @@ export default class App extends Component {
 
   render() {
     // const testboundary = <h2>兜底善后文字</h2>
+    const {loginstate} = this.state
+
+    if (loginstate === "successful"){
     return (
       <Fragment>
         <div className={apps.navigateArea}> 
           <div className={apps.navtitle}>
               <img className={apps.developer} src={developerImage} alt="Developer"/>
               <div className={apps.develpoerFont}>
-                Full-Stack Developer 
-               & Software Developer
+                Full-Stack Developer <br/> & Software Developer
               </div>
               <div className={apps.contact}>
                 <div>LinkedIn: <button className={apps.linkButton} onClick={this.toOtherLink("https://www.linkedin.com/in/chiyu-he-3b1695232/")}>Click me</button></div>
@@ -71,5 +73,12 @@ export default class App extends Component {
         </div>
       </Fragment>
     )
+    }else{
+      return (
+      <Fragment>
+        <LoginCOM />
+      </Fragment>)
+    }
+
   }
 }
