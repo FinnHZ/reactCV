@@ -11,7 +11,10 @@ def index():
 @app.route('/coverletter', methods=['GET','POST'])
 def coverletter():
     coverletterInfo = {}
-    coverletterInfo['content'] = 'letter content!!!!!!1'
+    with open('./static/document/coverletterWEB.txt') as f:
+        linesList = f.readlines()
+        coverletterInfo['content'] = linesList
+        f.close()
     coverletterInfo_json = json.dumps(coverletterInfo)
     return coverletterInfo_json
 
