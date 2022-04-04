@@ -4,6 +4,8 @@
     font-family: Gabriola;
     height: 100%;
     padding: 0.5%;
+    text-shadow:2px 2px 2px rgb(238, 205, 115) ; /* [X-offset,Y-offset,Color,Blur] */
+
 }
 
 .currentDate{
@@ -13,6 +15,16 @@
 
 .letterAsk{
     margin: 0.1% 0 0 5%;
+    font-size: 2em;
+}
+
+.letterContent{
+    margin: 0.5% 5% 0 5%;
+    font-size: 2em;
+}
+
+.letterLast{
+    margin: 0.5% 0 0 5%;
     font-size: 2em;
 }
 

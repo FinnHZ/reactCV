@@ -11,6 +11,7 @@ import SkillsPage from './pages/Skills_Pg'
 import CollectionPage from './pages/Collection_pg'
 import ManagementPage from './pages/Management_Pg'
 import developerImage from './img/developerImage.jpg'
+//import LoginCom from './components/Login_Com'
 
 export default class App extends Component {
   // state={boundarytest:''}
