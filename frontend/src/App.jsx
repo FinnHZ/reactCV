@@ -13,11 +13,12 @@ import ManagementPage from './pages/Management_Pg'
 import developerImage from './img/developerImage.jpg'
 import LoginCOM from './components/Login_Com'
 
-export default class App extends Component {
+import {validation} from '../src/redux/actions/login_ac'
+import { connect } from 'react-redux'
+
+class App extends Component {
   // state={boundarytest:''}
   // static getDerivedStateFromError(error){ return {boundarytest: error}}
-
-  state = {loginstate:"successful"}
 
   toOtherLink = (otherlink) => {
     return ( ()=>{
@@ -27,58 +28,63 @@ export default class App extends Component {
 
   render() {
     // const testboundary = <h2>兜底善后文字</h2>
-    const {loginstate} = this.state
-
-    if (loginstate === "successful"){
-    return (
-      <Fragment>
-        <div className={apps.navigateArea}> 
-          <div className={apps.navtitle}>
-              <img className={apps.developer} src={developerImage} alt="Developer"/>
-              <div className={apps.develpoerFont}>
-                Full-Stack Developer <br/> & Software Developer
-              </div>
-              <div className={apps.contact}>
-                <div>LinkedIn: <button className={apps.linkButton} onClick={this.toOtherLink("https://www.linkedin.com/in/chiyu-he-3b1695232/")}>Click me</button></div>
-                <div>GitHub:<button className={apps.linkButton}  onClick={this.toOtherLink("https://github.com/FinnHZ")}>Click me</button></div>
-                <div>E-mail: finn.he0102@gmail.com</div>
-              </div>
-          </div>
-          <hr/>
-          <div className="nav flex-column nav-pills me-3"  aria-orientation="vertical" style={{width:"100%"}}>
-              <MyNavLink to="/HomePage">Home</MyNavLink>
-              <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
-              <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
-              <MyNavLink to="/Education">Education</MyNavLink>
-              <MyNavLink to="/Experience">Experience</MyNavLink>
-              <MyNavLink to="/Skills">Skills & Demo</MyNavLink>
-              <MyNavLink to="/Collection">Collection & Resource</MyNavLink>
-              <MyNavLink to="/Management">Management</MyNavLink>
-          </div>
-        </div>
-        
-        {/* {this.state.boundarytest? testboundary:<HomePage/>} */}
-        <div className={apps.displayArea}>
-          <Routes>
-              <Route path="/HomePage" element={<HomePage/>}/>
-              <Route path="/CoverLetter" element={<CoverLetterPage/>}/>
-              <Route path="/BasicInfo" element={<BasicPage/>}/>
-              <Route path="/Education" element={<EducationPage/>}/>
-              <Route path="/Experience" element={<ExperiencePage/>}/>
-              <Route path="/Skills" element={<SkillsPage/>}/>
-              <Route path="/Collection" element={<CollectionPage/>}/>
-              <Route path="/Management" element={<ManagementPage/>}/>
-              <Route path="/" element={<Navigate to="/HomePage" />} />
-          </Routes>
-        </div>
-      </Fragment>
-    )
+    if (this.props.validateLogin.indexOf("abcd") === -1){   ///////////////////////////////!!!!!!!!!!!!!!!!
+      return (
+        <Fragment>
+          <LoginCOM />
+        </Fragment>
+      )
     }else{
       return (
-      <Fragment>
-        <LoginCOM />
-      </Fragment>)
+        <Fragment>
+          <div className={apps.navigateArea}> 
+            <div className={apps.navtitle}>
+                <img className={apps.developer} src={developerImage} alt="Developer"/>
+                <div className={apps.develpoerFont}>
+                  Full-Stack Developer <br/> & Software Developer
+                </div>
+                <div className={apps.contact}>
+                  <div>LinkedIn: <button className={apps.linkButton} onClick={this.toOtherLink("https://www.linkedin.com/in/chiyu-he-3b1695232/")}>Click me</button></div>
+                  <div>GitHub:<button className={apps.linkButton}  onClick={this.toOtherLink("https://github.com/FinnHZ")}>Click me</button></div>
+                  <div>E-mail: finn.he0102@gmail.com</div>
+                </div>
+            </div>
+            <hr/>
+            <div className="nav flex-column nav-pills me-3"  aria-orientation="vertical" style={{width:"100%"}}>
+                <MyNavLink to="/HomePage">Home</MyNavLink>
+                <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
+                <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
+                <MyNavLink to="/Education">Education</MyNavLink>
+                <MyNavLink to="/Experience">Experience</MyNavLink>
+                <MyNavLink to="/Skills">Skills & Demo</MyNavLink>
+                <MyNavLink to="/Collection">Collection & Resource</MyNavLink>
+                <MyNavLink to="/Management">Management</MyNavLink>
+            </div>
+          </div>
+          
+          {/* {this.state.boundarytest? testboundary:<HomePage/>} */}
+          <div className={apps.displayArea}>
+            <Routes>
+                <Route path="/HomePage" element={<HomePage/>}/>
+                <Route path="/CoverLetter" element={<CoverLetterPage/>}/>
+                <Route path="/BasicInfo" element={<BasicPage/>}/>
+                <Route path="/Education" element={<EducationPage/>}/>
+                <Route path="/Experience" element={<ExperiencePage/>}/>
+                <Route path="/Skills" element={<SkillsPage/>}/>
+                <Route path="/Collection" element={<CollectionPage/>}/>
+                <Route path="/Management" element={<ManagementPage/>}/>
+                <Route path="/" element={<Navigate to="/HomePage" />} />
+            </Routes>
+          </div>
+        </Fragment>
+      )
     }
 
   }
 }
+
+
+export default connect(
+  state => {return {validateLogin: state.loginReducer}},
+    {validation}
+)(App)
