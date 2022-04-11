@@ -1,4 +1,5 @@
 import {combineReducers} from "redux"
 import loginReducer from "./login_re"
+import validateReducer from "./validate_re"
 
-export default combineReducers({loginReducer})
+export default combineReducers({loginReducer, validateReducer})

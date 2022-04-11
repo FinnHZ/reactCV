@@ -1,4 +1,4 @@
-import { VALIDATE_LOGIN } from "../constant";
+import { LOGIN_CHANGE, LOGOUT_CHANGE } from "../constant";
 
-export const validation = data => ({type:VALIDATE_LOGIN, data})
-
+export const loginChange = data => ({type:LOGIN_CHANGE, data})
+export const logoutChange = data => ({type:LOGOUT_CHANGE, data})

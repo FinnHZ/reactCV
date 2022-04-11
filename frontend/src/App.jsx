@@ -3,7 +3,7 @@ import React, { Component,Fragment } from 'react'
 import LoginCOM from './components/Login_Com'
 import MainInterfaceCOM from './components/MainInterface_Com'
 
-import {validation} from '../src/redux/actions/login_ac'
+import { loginChange, logoutChange } from './redux/actions/login_ac'
 import { connect } from 'react-redux'
 
 class App extends Component {
@@ -13,18 +13,20 @@ class App extends Component {
 
   render() {
     // const testboundary = <h2>兜底善后文字</h2>
-    if (this.props.validateLogin.indexOf("abcd") === -1){   //应该在redux中另外建一个login状态属性，布尔值，这里的验证就直接改成验证布尔值的true或false
+    if (this.props.loginState === "unsuccess"){   //this.props.validateLogin.indexOf("abcd") === -1
       return (
         <Fragment>
           <LoginCOM />
         </Fragment>
       )
-    }else{
+    }else if(this.props.loginState === "success"){
       return (
         <Fragment>
           <MainInterfaceCOM />
         </Fragment>
       )
+    }else{
+      <h1>Please restart your browser!</h1>
     }
 
   }
@@ -32,6 +34,6 @@ class App extends Component {
 
 
 export default connect(
-  state => {return {validateLogin: state.loginReducer}},
-    {validation}
+  state => {return {loginState: state.loginReducer}},
+    {loginChange, logoutChange}
 )(App)

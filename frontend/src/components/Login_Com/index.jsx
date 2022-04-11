@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {validation} from '../../redux/actions/login_ac'
+import { loginChange, logoutChange } from '../../redux/actions/login_ac'
+import { validationAdd, validationRemove } from '../../redux/actions/validate_ac'
 import { connect } from 'react-redux'
 
 class LoginCOM extends Component {
@@ -10,9 +11,16 @@ class LoginCOM extends Component {
 
 
   validateCode = () => {
-    this.props.validation("abcd");   //////////////////////////////////这里应该先axios通信将用户输入的验证码发到后端，在后端的验证码储存载体里面搜索，如果用户名和验证码正好都有，且能match上，则进行这一步将验证码/用户名添加到前端的redux共享state数组中，并且将Appz中提到的布尔值共享状态改为true(注意这部分的redux还没有做，记得做！！！！)
-    console.log(this.props.validateLogin)
+    //axios 发送用户输入的验证码到后端验证，等待后端返回一个布尔值，凭此布尔值判断是否应该改变redux中的共享状态 这里暂时假设这个
+    const logoinFlag =  false
+    if (logoinFlag === true){
+      this.props.validationAdd({"用户名": "验证码"})
+      this.props.loginChange("success")
+      
+    }
   }
+
+  
 
   //render waiting for modifying!!!!!!!!!!!!!!!!!!!!!????????????????????????
   render() {
@@ -31,8 +39,8 @@ class LoginCOM extends Component {
   }
 }
 
-
+  
 export default connect(
-  state => {return {validateLogin: state.loginReducer}},
-    {validation}
+  state => {return {loginState: state.loginReducer, validateArr: state.validateReducer}},
+    {loginChange, logoutChange, validationAdd, validationRemove}
 )(LoginCOM)
