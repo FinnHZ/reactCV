@@ -1,0 +1,23 @@
+.uni{
+    width: 40%;
+}
+
+.dateMonth{
+    text-align: right;
+}
+
+.d2{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: left;
+    margin: 10% 0 0 0;
+    font-size: 1.2em;
+}
+
+.d1{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: right;
+    margin: 10% 0 0 0;
+    font-size: 1.2em;
+}

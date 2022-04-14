@@ -115,8 +115,8 @@ class MainInterfaceCOM extends Component {
               <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
               <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
               <MyNavLink to="/Education">Education</MyNavLink>
-              <MyNavLink to="/Experience">Experience</MyNavLink>
               <MyNavLink to="/Skills">Skills & Demo</MyNavLink>
+              <MyNavLink to="/Experience">Experience</MyNavLink>
               <MyNavLink to="/Collection">Collection & Resource</MyNavLink>
               <MyNavLink to="/Management">Management</MyNavLink>
           </div>
@@ -129,8 +129,8 @@ class MainInterfaceCOM extends Component {
               <Route path="/CoverLetter" element={<CoverLetterPage/>}/>
               <Route path="/BasicInfo" element={<BasicPage/>}/>
               <Route path="/Education" element={<EducationPage/>}/>
-              <Route path="/Experience" element={<ExperiencePage/>}/>
               <Route path="/Skills" element={<SkillsPage/>}/>
+              <Route path="/Experience/*" element={<ExperiencePage/>}/>
               <Route path="/Collection" element={<CollectionPage/>}/>
               <Route path="/Management" element={<ManagementPage/>}/>
               <Route path="/" element={<Navigate to="/HomePage" />} />

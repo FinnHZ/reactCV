@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component} from 'react'
 import homepage from './index.module.css'
 import LoginCOM from '../../components/Login_Com'
 
@@ -15,13 +15,15 @@ class HomePage extends Component {
   render() {
     if(this.props.loginState === "unsuccess"){     ////////////?????????怎么处理让路由自动跳转会login界面的路由？？？
       return (
-        <Fragment>
+        <div>
           <LoginCOM />
-        </Fragment>
+        </div>
       )
     }else if(this.props.loginState === "success"){
     return (
-      <h1 className={homepage.title}>Welcome to Finn's world!</h1>
+      <div>
+        <h1 className={homepage.title}>Welcome to Finn's world!</h1>
+      </div>
     )}
   }
 }

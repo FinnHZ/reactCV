@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import covers from './index.module.css'
 // import axios from 'axios'
 import moment from 'moment'
+import { connect } from 'react-redux'
 
-export default class CoverLetterPage extends Component {
+class CoverLetterPage extends Component {
 
 
   
@@ -24,7 +25,8 @@ export default class CoverLetterPage extends Component {
 
 
   render() {
-    const {currentDate, companyName} = this.state
+    // , companyName
+    const {currentDate} = this.state    
     const content_0 = "This is a special cover letter for you. I'm Finn who is from China and a new man for IT. I want to be a full-stack developer, of course, I'm also can do software development if the software is interesting."
     const content_1 = "Actually, I was a Hotel Product Manager of the biggest online travel agency (Trip.com Group) in China 2.5 years ago. However, I want to see a more interesting world, so I come to  New Zealand through a WHV chance. I met some developers in my workplace in New Zealand. I found programming in NZ is a very interesting thing after communicating with them, so I start my IT life with the Master of Applied Computing at Lincoln University."
     const content_2 = "For the past 1.5 years, I have gotten good programming skills and good intern developer experience. The reason why I create this website and looking for a programming job is not only because I just got a Master's degree in Applied Computing from Lincoln University, but also because I like the feeling of creating websites and software. The joy from creating can make me keep moving."
@@ -36,7 +38,7 @@ export default class CoverLetterPage extends Component {
         <div className={covers.letterBackground}>
           <div className={covers.currentDate}>{currentDate}</div>
           <div className={covers.letterAsk}>
-            <span className={covers.companyName}>Dear {companyName} team,</span>
+            <span className={covers.companyName}>Dear {this.props.validateArr[0]} team,</span>
           </div>
           <div className={covers.letterContent}>{content_0}</div>
           <div className={covers.letterContent}>{content_1}</div>
@@ -49,3 +51,7 @@ export default class CoverLetterPage extends Component {
     )
   }
 }
+
+export default connect(
+  state => {return {validateArr: state.validateReducer}}
+)(CoverLetterPage)

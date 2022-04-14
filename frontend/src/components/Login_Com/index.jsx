@@ -12,9 +12,9 @@ class LoginCOM extends Component {
 
   validateCode = () => {
     //axios 发送用户输入的验证码到后端验证，等待后端返回一个布尔值，凭此布尔值判断是否应该改变redux中的共享状态 这里暂时假设这个
-    const logoinFlag =  false
+    const logoinFlag =  true
     if (logoinFlag === true){
-      this.props.validationAdd({"用户名": "验证码"})
+      this.props.validationAdd("用户名")
       this.props.loginChange("success")
       
     }
