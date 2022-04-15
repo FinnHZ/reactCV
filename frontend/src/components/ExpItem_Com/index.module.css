@@ -1,0 +1,35 @@
+.workDate{
+    text-align: right
+}
+
+.c0{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: left;
+    margin: 2% 0 0 0;
+    font-size: 1.2em;
+}
+
+.c1{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: right;
+    margin: 2% 0 0 0;
+    font-size: 1.2em;
+}
+
+.c2{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: left;
+    margin: 2% 0 0 0;
+    font-size: 1.2em;
+}
+
+.c3{
+    box-shadow: 0 0 10px #ddd;
+    width: 80%;
+    float: right;
+    margin: 2% 0 0 0;
+    font-size: 1.2em;
+}

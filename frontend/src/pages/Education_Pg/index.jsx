@@ -9,18 +9,18 @@ export default class EducationPage extends Component {
     let educate_bg = []
     educate_bg = [
       {
-        id:"d2",
-        uni:"Lincoln University , New Zealand ",
-        dateMonth:"Nov 2020 - Feb 2022", 
-        degree:"Master of Computer Applications - MCA", 
-        magior:"Advanced Programming, Arc GIS, Industry Project, Software Development, Studio Project, Business Analysis"
-      },
-      {
-        id:"d1",
+        id:"d0",
         uni:"Xihua University, China ",
         dateMonth:"Sep 2009 - Jun 2013", 
         degree:"Bachelor of Engineering (Automation Engineer Technology/Technician)", 
         magior:"Advanced Mathematics, Neural Networks(basic), PLC, C++(basic), VB(basic ), Analog electronic circuit, Digital electronic circuit, Circuit principle"
+      },
+      {
+        id:"d1",
+        uni:"Lincoln University , New Zealand ",
+        dateMonth:"Nov 2020 - Feb 2022", 
+        degree:"Master of Computer Applications - MCA", 
+        magior:"Advanced Programming, Arc GIS, Industry Project, Software Development, Studio Project, Business Analysis"
       }
     ]
 

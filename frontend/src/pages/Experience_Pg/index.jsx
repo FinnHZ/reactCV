@@ -11,14 +11,14 @@ export default class ExperiencePage extends Component {
     return (
       <div>
         <div className="nav nav-tabs">
-          <MyNavLink to="techExp" style={{width:"50%", "text-align":"center", "font-size":"1.5em"}}>PROFESSIONAL EXPERIENCE</MyNavLink>
-          <MyNavLink to="workExp" style={{width:"50%", "text-align":"center", "font-size":"1.5em"}}>WORK EXPERIENCE</MyNavLink>
+          <MyNavLink to="techExp" style={{width:"50%", textAlign:"center", fontSize:"1.5em"}}>PROFESSIONAL EXPERIENCE</MyNavLink>
+          <MyNavLink to="workExp" style={{width:"50%", textAlign:"center", fontSize:"1.5em"}}>WORK EXPERIENCE</MyNavLink>
         </div>
 
         <div className={experienceCSS.display}>
           <Routes>
-            <Route path="techExp" element={<SmallExpTechPage />} />
-            <Route path="workExp" element={<SmallExpWorkPage />} />
+            <Route path="techExp/*" element={<SmallExpTechPage />} />
+            <Route path="workExp/*" element={<SmallExpWorkPage />} />
             <Route path="/" element={<Navigate to="techExp" />} />
           </Routes>
         </div>
