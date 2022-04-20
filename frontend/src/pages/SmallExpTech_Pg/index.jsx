@@ -13,7 +13,7 @@ export default class SmallExpTechPage extends Component {
         id:"k0",
         workCompany:"Lincoln University , Canterbury", 
         workDate:"Mar 2021- Apr 2021", 
-        workPosition:"Full-stack developer. (Python, Flask, PostgreSQL, HTML, CSS, Jira, GitHub)", 
+        workPosition:"Full-stack developer. - Python, Flask, PostgreSQL, HTML, CSS, Jira, GitHub", 
         workDescription:["A simulation web project for Lincoln University gym management system.",
                         "Get the requirements from simulation customer's interview document.",
                         "Create an information management system with a different access level.",
@@ -25,7 +25,7 @@ export default class SmallExpTechPage extends Component {
         id:"k1",
         workCompany:"Lincoln University , Canterbury", 
         workDate:"May 2021 - Jun 2021", 
-        workPosition:"Full-stack except database (Python, Flask, PostgreSQL, HTML, CSS, eChart, JavaScript)", 
+        workPosition:"Full-stack except database - Python, Flask, PostgreSQL, HTML, CSS, eChart, JavaScript", 
         workDescription:["A data visualization web project for agriculture data.",
                         "Organize the agriculture data and analyze it.",
                         "Visualize the agriculture data from a database.(line chart / bar chart).",
@@ -35,7 +35,7 @@ export default class SmallExpTechPage extends Component {
         id:"k2",
         workCompany:"AuCom Electronics Ltd , Canterbury", 
         workDate:"Jul 2021 - Oct 2021", 
-        workPosition:"Full-stack developer (Python, Flask, Microsoft SQL server, HTML, CSS, jQuery, eChart)", 
+        workPosition:"Full-stack developer - Python, Flask, Microsoft SQL server, HTML, CSS, jQuery, eChart", 
         workDescription:["Be responsible for hotel product development and assist over 100 hotels in analyzing hotel operational data and operating hotels.",
                         "A data upload and management web system project.",
                         "Features for analyzing the data of a special type file and uploading it into the database.",
@@ -49,8 +49,8 @@ export default class SmallExpTechPage extends Component {
         id:"k3",
         workCompany:"AuCom Electronics Ltd , Canterbury", 
         workDate:"Nov 2021 - Feb 2022", 
-        workPosition:" Software developer (Python, Tkinter, Matplsotlib)", 
-        workDescription:["A data upload and visualization desk application(software) project.",
+        workPosition:" Software developer - Python, Tkinter", 
+        workDescription:["A data upload and visualization desk application(software based on Matplsotlib) project.",
                         "Features for analyzing the data and uploading it.",
                         "Features for monitoring and comparing the dynamic temperature data."
                       ]
@@ -59,10 +59,22 @@ export default class SmallExpTechPage extends Component {
         id:"k4",
         workCompany:"AuCom Electronics Ltd , Canterbury", 
         workDate:"Feb 2022 - present", 
-        workPosition:" Software developer (C# .Net Framework)", 
-        workDescription:["The features extension for a hardware test software.",
+        workPosition:" Software developer - C#", 
+        workDescription:["The features extension for a hardware test software(based on .Net Framework).",
                         "Fix older Bugs.",
                         "Make the process of machine work become automatic from manual."
+                      ]
+      },
+      {
+        id:"k5",
+        workCompany:"Self-employee , Canterbury", 
+        workDate:"Mar 2022 - present", 
+        workPosition:" Full-stack developer - Python, Flask, HTML, CSS, react, eChart", 
+        workDescription:["Back-end data process",
+                        "react front-end build",
+                        "Dynamic validation features",
+                        "Dynamic charts",
+                        "Background management channel"
                       ]
       }
     ]
