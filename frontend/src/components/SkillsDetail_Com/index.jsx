@@ -1,41 +1,57 @@
 import React, { Component } from 'react'
 import * as echarts from 'echarts';
 import "./index.css"
-import { connect } from 'react-redux'
-import { updateDetail } from '../../redux/actions/detailChart_ac';
+import PubSub from 'pubsub-js'
 
 
-class SkillsDetailCOM extends Component {
+export default class SkillsDetailCOM extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {initialSkills: this.props.currentSkills}
+  }
   
   componentDidMount() {
-    const detailChartInfo = {
-      "Language": {name:"Language", column:["Python", "HTML", "CSS", "JavaScript", "C#"], data:[1,2,3,4,5]},
-      "Frameworks/libraries": {name:"Frameworks/libraries", column:["Flask", "jQuery", "react", "Tkinter", "eChart", "Matplotlib"], data:[1,2,3,4,5,6]},
-      "Database": {name:"Database", column:["PostgreSQL", "Microsoft SQL server"], data:[1,2]},
-      "Tools": {name:"Tools", column:["Jira", "Git/GitHub", "ArcGIS", "Apache"], data:[1,2,3,4]}
-    }
-  
-
-    console.log(detailChartInfo.Language)
-    this.initMap_d(detailChartInfo.Language)  // initial the detail bar chart
-    
+    let detailChart = this.initMap_d(this.state.initialSkills)
+    PubSub.subscribe('submarker', (msg, data)=>{
+      let option
+      option = {
+        xAxis: {    
+          type: "category",
+          data: data[0]
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [
+          {
+            data: data[1],
+            type: 'bar',
+            showBackground: true,
+            backgroundStyle: {
+              color: 'rgba(180, 180, 180, 0.2)'
+            }
+          }
+        ]
+      };
+      detailChart.setOption(option)
+    })
   }
 
-
-  initMap_d = (dataDict={name:"", column:[], data:[]}) => {
+  initMap_d = (dataDetailArr) => {
     let option
     let myChart = echarts.init(document.getElementById('detailChart'));
     option = {
       xAxis: {    
         type: "category",
-        data: dataDict.column
+        data: dataDetailArr[0]
       },
       yAxis: {
         type: 'value'
       },
       series: [
         {
-          data: dataDict.data,
+          data: dataDetailArr[1],
           type: 'bar',
           showBackground: true,
           backgroundStyle: {
@@ -45,9 +61,8 @@ class SkillsDetailCOM extends Component {
       ]
     };
     myChart.setOption(option); // 绘制画布
+    return myChart
   }
-
-
 
   render() {
     return (
@@ -58,7 +73,3 @@ class SkillsDetailCOM extends Component {
   }
 }
 
-export default connect(
-  state => {return {detailInfo: state.updateDetailChartReducer }},  //！！！注意这里state的名字是这里才取出来方便调用的，之前reducer里面只负责了初始化，然后操作这个state属性对应的reducer名如果在上述3.3中引入的时候另取了名，则需要使用那个名字，否则就是上面暴露出来的reducer名字
-    {updateDetail}
-)(SkillsDetailCOM)

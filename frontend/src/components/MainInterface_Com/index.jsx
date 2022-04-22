@@ -82,10 +82,10 @@ import { connect } from 'react-redux'
 
 class MainInterfaceCOM extends Component {
 
-  componentDidMount() {
-    console.log(this.props.loginState, "+++", this.props.validateArr)
+  // componentDidMount() {
+  //   console.log(this.props.loginState, "+++", this.props.validateArr)
 
-  }
+  // }
 
 
   openOtherLink = (otherlink) => {
