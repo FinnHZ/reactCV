@@ -115,9 +115,9 @@ class MainInterfaceCOM extends Component {
               <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
               <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
               <MyNavLink to="/Education">Education</MyNavLink>
-              <MyNavLink to="/Skills">Skills & Demo</MyNavLink>
+              <MyNavLink to="/Skills">Skills</MyNavLink>
               <MyNavLink to="/Experience">Experience</MyNavLink>
-              <MyNavLink to="/Collection">Collection & Resource</MyNavLink>
+              <MyNavLink to="/Collection">Collections</MyNavLink>
               <MyNavLink to="/Management">Management</MyNavLink>
           </div>
         </div>

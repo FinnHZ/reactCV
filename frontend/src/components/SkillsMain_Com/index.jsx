@@ -16,44 +16,57 @@ export default class SkillsMainCOM extends Component {
   }
   
   initMap = (dataArr_dis, detailDataArr) => {
+    var dom1 = document.getElementById("mainChart");
+    //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+    var resizeWorldMapContainer1 = function () {
+      dom1.style.width = ((window.innerWidth-500)/2) +'px';
+      dom1.style.height = (window.innerHeight-120)+'px';
+    };
+    //设置容器高宽
+    resizeWorldMapContainer1();
+
     let option
     let myChart = echarts.init(document.getElementById('mainChart'));
     option = {
-        tooltip: {
+      title : {
+        show:true, //显示策略，默认值true,可选为：true（显示） | false（隐藏）
+        text: 'Skills Distribution', //主标题文本，'\n'指定换行
+      },
+      tooltip: {
         trigger: 'item'
-        },
-        legend: {
+      },
+      legend: {
         top: '5%',
         left: 'center'
-        },
-        series: [
+      },
+      series: [
         {
-            name: 'Skills Distribution',
-            type: 'pie',
-            radius: ['40%', '70%'],
-            avoidLabelOverlap: false,
-            itemStyle: {
+          name: 'Skills Distribution',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
             borderRadius: 10,
             borderColor: '#fff',
             borderWidth: 2
-            },
-            label: {
+          },
+          label: {
             show: false,
             position: 'center'
-            },
-            emphasis: {
+          },
+          emphasis: {
             label: {
-                show: true,
-                fontSize: '40',
-                fontWeight: 'bold'
+              show: true,
+              fontSize: '40',
+              fontWeight: 'bold'
             }
-            },
-            labelLine: {
+          },
+          labelLine: {
             show: false
-            },
-            data: dataArr_dis
+          },
+          data: dataArr_dis
         }
-        ]
+      ]
     };
     
     myChart.setOption(option); // 绘制画布 or 更新图表

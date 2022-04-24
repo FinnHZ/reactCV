@@ -21,10 +21,10 @@ export default class SkillsPage extends Component {
     const numOfProjects = 6   // this number should from experience module?
     
     const detailChartInfo = {  // this data should be from the axios data of backend
-      "Language": [["Python", "HTML", "CSS", "JavaScript", "C#"], [1,2,3,4,5]],
-      "Frameworks/libraries": [["Flask", "jQuery", "react", "Tkinter", "eChart", "Matplotlib"],[1,2,3,4,5,6]],
-      "Database": [["PostgreSQL", "Microsoft SQL server"],[1,2]],
-      "Tools": [["Jira", "Git/GitHub", "ArcGIS", "Apache"],[1,2,3,4]]
+      "Language": ["Language", ["Python", "HTML", "CSS", "JavaScript", "C#"], [1,2,3,4,5]],
+      "Frameworks/libraries": ["Frameworks/libraries", ["Flask", "jQuery", "react", "Tkinter", "eChart", "Matplotlib"],[1,2,3,4,5,6]],
+      "Database": ["Database", ["PostgreSQL", "Microsoft SQL server"],[1,2]],
+      "Tools": ["Tools", ["Jira", "Git/GitHub", "ArcGIS", "Apache"],[1,2,3,4]]
     }
 
     this.state = {numProjects: numOfProjects, distributions:skillsDistribution, moreDetails:detailChartInfo, currentDetail:detailChartInfo.Language}
@@ -34,8 +34,8 @@ export default class SkillsPage extends Component {
     const {distributions, moreDetails, numProjects, currentDetail} = this.state
     return (
       <div>
-        <SkillsMainCOM skillsDis={distributions} moreSkills={moreDetails}/>
         <h1>Total number of projects: {numProjects}</h1>
+        <SkillsMainCOM skillsDis={distributions} moreSkills={moreDetails}/>
         <SkillsDetailCOM currentSkills={currentDetail}/>
       </div>
     )
