@@ -11,6 +11,7 @@ import SkillsPage from '../../pages/Skills_Pg'
 import CollectionPage from '../../pages/Collection_pg'
 import ManagementPage from '../../pages/Management_Pg'
 import developerImage from '../../img/developerImage.jpg'
+import ManageEditPage from '../../pages/ManageEdit_Pg'
 
 
 import { loginChange, logoutChange } from '../../redux/actions/login_ac'
@@ -133,6 +134,7 @@ class MainInterfaceCOM extends Component {
               <Route path="/Experience/*" element={<ExperiencePage/>}/>
               <Route path="/Collection" element={<CollectionPage/>}/>
               <Route path="/Management" element={<ManagementPage/>}/>
+              <Route path="/ManageEditPage" element={<ManageEditPage/>}/>
               <Route path="/" element={<Navigate to="/HomePage" />} />
           </Routes>
         </div>
