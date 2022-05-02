@@ -11,9 +11,14 @@ export default class SkillsDetailCOM extends Component {
     this.state = {initialSkills: this.props.currentSkills}
   }
   
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.chartSub)
+  }
+
   componentDidMount() {
     let detailChart = this.initMap_d(this.state.initialSkills)
-    PubSub.subscribe('submarker', (msg, data)=>{
+    this.chartSub = PubSub.subscribe('submarker', (msg, data)=>{
+      console.log("0000000000000qqqqqqqqqqqqqqqqq")
       let option
       option = {
         title : {
