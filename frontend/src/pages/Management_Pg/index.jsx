@@ -6,8 +6,7 @@ export default class ManagementPage extends Component {
                    {id:"001", content:"Cover Letter Module", moduleName: "CoverLetter"},
                    {id:"002", content:"Basic Inforamtion Module", moduleName: "BasicInfo"},
                    {id:"003", content:"Education Module", moduleName: "Education"},
-                   {id:"004", content:"Skills&Experience Module", moduleName: "Skills"},
-                   {id:"005", content:"Collections Module", moduleName: "Collections"},
+                   {id:"004", content:"Collections Module", moduleName: "Collections"},
                   ]
           }
 

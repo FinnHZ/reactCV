@@ -6,7 +6,6 @@ import {change_manage} from '../../redux/actions/manageTable_ac'
 class ManageListCOM extends Component {
 
   gotoEdit = (moduleFlag) => {
-    console.log("rttuyutyuyu")
     this.props.change_manage(moduleFlag)
   }
   
