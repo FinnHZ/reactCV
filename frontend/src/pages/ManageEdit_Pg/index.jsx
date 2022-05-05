@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import EditTableCOM from '../../components/EditTable_Com'
 
 class ManageEditPage extends Component {
 
+  state = {editObj:[]}
 
   submitFunc = () => {
 
@@ -32,12 +34,12 @@ class ManageEditPage extends Component {
                                          ["Summary_4","Over half year internship experience."]
                                         ],
                             "Education":[
-                                          ["*","Education_1"],
+                                          ["Education_1",""],
                                           ["University","Xihua University, China "],
                                           ["DateMonth","Sep 2009 - Jun 2013"], 
                                           ["Degree","Bachelor of Engineering (Automation Engineer Technology/Technician)"], 
                                           ["Magior","Advanced Mathematics, Neural Networks(basic), PLC, C++(basic), VB(basic ), Analog electronic circuit, Digital electronic circuit, Circuit principle"],
-                                          ["*","Education_2"],
+                                          ["Education_2",""],
                                           ["University","Lincoln University , New Zealand "],
                                           ["DateMonth","Nov 2020 - Feb 2022"], 
                                           ["Degree","Master of Computer Applications - MCA"], 
@@ -48,24 +50,16 @@ class ManageEditPage extends Component {
                                             ["abstract2","type2","address2"]
                                           ]
                           }
-    if (this.props.manageState){
-
-    }
-    
-                        
-
-
+    this.setState({editObj:editTableItems[this.props.manageState]})
 
   }
   
-
-
-
-
   render() {
+    const {editObj} = this.state
     return (
       <div>
         <h1>{this.props.manageState} EDIT PAGE</h1>
+        <EditTableCOM editObjItem={editObj}/>
         <button onClick = {this.submitFunc}>submit</button>
         <button onClick = {this.cancelFunc}>cancel</button>
       </div>
