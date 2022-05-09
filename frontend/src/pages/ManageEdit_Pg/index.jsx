@@ -11,8 +11,7 @@ class ManageEditPage extends Component {
   }
 
   cancelFunc = () => {
-
-
+    window.history.go(-1)
   }
   componentDidMount(){
     // thiseditTableItems is the data that should be in the back-end, and we only neet to take one of them according to the this.props.manageState. don't take all of them like below, below is just temporary solution.
