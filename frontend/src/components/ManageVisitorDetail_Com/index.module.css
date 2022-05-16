@@ -1,0 +1,25 @@
+.visitTableDislaly{
+    text-align: center;
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.visitTBody{
+    display: block;
+    width: 100%; /* calc(100%+8px)    这里的8px是滚动条的宽度*/
+    height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    scrollbar-width: 5%;
+}
+
+.visitTBodyTr{
+    box-sizing: border-box;
+    table-layout: fixed;
+    display: table;
+    width: 100%;
+}
+
+
