@@ -22,7 +22,6 @@ import { connect } from 'react-redux'
 // export default class MainInterfaceCOM extends Component {
 
 //   componentDidMount() {
-//     console.log(this.props.loginState, "+++", this.props.validateArr)
 
 //   }
 
@@ -82,12 +81,6 @@ import { connect } from 'react-redux'
 
 
 class MainInterfaceCOM extends Component {
-
-  // componentDidMount() {
-  //   console.log(this.props.loginState, "+++", this.props.validateArr)
-
-  // }
-
 
   openOtherLink = (otherlink) => {
     return ( ()=>{

@@ -99,7 +99,6 @@ export default class SmallExpTechPage extends Component {
   render() {
     const {workExp, currentPage} = this.state
     const maxLength = workExp.length
-    console.log(currentPage)
     return (
       <div>
         <div className={smallWorkExpCSS.displayArea} >

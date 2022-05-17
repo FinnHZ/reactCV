@@ -3,7 +3,7 @@ import visitDetailCSS from './index.module.css'
 
 export default class ManageVisitorDetailCOM extends Component {
   
- 
+
   render() {
     const {vistdetail} = this.props
     return (
