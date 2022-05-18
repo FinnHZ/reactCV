@@ -22,8 +22,8 @@ export default class ManageVisitHMCOM extends Component {
     let dom_hm = document.getElementById("heatMapChart");
     //用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
     let resizeWorldMapContainer_hm = function () {
-        dom_hm.style.width = ((window.innerWidth-200)*0.7) +'px';
-        dom_hm.style.height =(window.innerHeight*0.4) +'px';
+        dom_hm.style.width = ((window.innerWidth-500)*1) +'px';
+        dom_hm.style.height =(window.innerHeight*0.35) +'px';
     };
     //设置容器高宽
     resizeWorldMapContainer_hm();
@@ -31,7 +31,7 @@ export default class ManageVisitHMCOM extends Component {
     let myChart_hm = echarts.init(document.getElementById('heatMapChart'));
     option = {
         title: {
-          top: 30,
+          top: 10,
           left: 'center',
           text: 'The number of Visitors --' + dataYear
         },
@@ -42,10 +42,10 @@ export default class ManageVisitHMCOM extends Component {
           type: 'piecewise',
           orient: 'horizontal',
           left: 'center',
-          top: 65
+          top: 45
         },
         calendar: {
-          top: 120,
+          top: 100,
           left: 30,
           right: 30,
           cellSize: ['auto', 25],
@@ -71,7 +71,7 @@ export default class ManageVisitHMCOM extends Component {
     let option
     option = {                                  // we just need to give a new option and then use the chartname.setOption(option) when we want to update the chart
         title: {
-          top: 30,
+          top: 10,
           left: 'center',
           text: 'The number of Visitors --' + newYear
         },
@@ -82,10 +82,10 @@ export default class ManageVisitHMCOM extends Component {
           type: 'piecewise',
           orient: 'horizontal',
           left: 'center',
-          top: 65
+          top: 45
         },
         calendar: {
-          top: 120,
+          top: 100,
           left: 30,
           right: 30,
           cellSize: ['auto', 25],
@@ -115,7 +115,7 @@ export default class ManageVisitHMCOM extends Component {
                 return (<option key={index} value={item}>{item}</option>)
             })}
           </select>
-          <div id="heatMapChart" style={{flex: 1, height: '500px', width: '500px', margin:"5% 0 0 2%"}} ></div>
+          <div id="heatMapChart" style={{flex: 1, height: '500px', width: '500px', margin:"0 0 0 5%", background:"gray"}} ></div>
         </Fragment>
     )
   }
