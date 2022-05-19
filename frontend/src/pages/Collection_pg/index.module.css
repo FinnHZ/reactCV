@@ -1,0 +1,25 @@
+.colTable{
+    text-align: center;
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+.colTr{
+    box-sizing: border-box;
+    table-layout: fixed;
+    display: table;
+    width: 100%;    
+}
+
+.colTBody{
+    display: block;
+    width: 100%; /* calc(100%+8px)    这里的8px是滚动条的宽度*/
+    height: calc(100vh - 50px);   /* vh 等于 1% 的 视窗高度， vw 等于 1% 的 视窗宽度， 注意这里的运算符前后都必须要有空格！！！*/
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center;
+    scrollbar-width: 5%;    
+}
+
+

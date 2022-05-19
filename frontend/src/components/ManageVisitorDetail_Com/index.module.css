@@ -8,14 +8,14 @@
 .visitTBody{
     display: block;
     width: 100%; /* calc(100%+8px)    这里的8px是滚动条的宽度*/
-    height: 300px;
+    height: calc(100vh * 0.3);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     text-align: center;
     scrollbar-width: 5%;
 }
 
-.visitTBodyTr{
+.visitTr{
     box-sizing: border-box;
     table-layout: fixed;
     display: table;

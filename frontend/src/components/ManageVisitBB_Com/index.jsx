@@ -107,7 +107,6 @@ export default class ManageVisitBBCOM extends Component {
   }
 
 
-
   yearChange_bb =(e) => { // 选择
     const {dataDict_bb, bbChart} = this.state
     const newYearData_bb = dataDict_bb[e.target.value]
