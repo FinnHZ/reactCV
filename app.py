@@ -10,13 +10,30 @@ def index():
 
 @app.route('/coverletter', methods=['GET','POST'])
 def coverletter():
+    # coverletterInfo = {}
+    # coverletterFile_original = open("./static/document/coverLetterCSV_CV.csv")
+    # coverletterFile_csv = csv.reader(coverletterFile_original)
+    # coverletterContent_list = list(coverletterFile_csv)
+    
+    # for i in range(0, len(coverletterContent_list)):
+    #     coverletterInfo['content_'+i] = coverletterContent_list[0]
+
+    # coverletterFile_original.close()
+
+    # coverletterInfo_json = json.dumps(coverletterInfo)
+    # return coverletterInfo_json
+
     coverletterInfo = {}
-    with open('./static/document/coverletterWEB.txt') as f:
+    with open('./static/document/coverLetterCSV_CV.txt') as f:
         linesList = f.readlines()
-        coverletterInfo['content'] = linesList
+        for i in range(0, len(linesList)):
+            coverletterInfo['content_'+ str(i)] = linesList[i].replace("\n","")
         f.close()
+        
     coverletterInfo_json = json.dumps(coverletterInfo)
     return coverletterInfo_json
+
+
 
 
 
