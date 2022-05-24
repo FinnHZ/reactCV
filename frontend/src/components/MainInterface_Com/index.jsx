@@ -18,68 +18,6 @@ import { loginChange, logoutChange } from '../../redux/actions/login_ac'
 import { validationAdd, validationRemove } from '../../redux/actions/validate_ac'
 import { connect } from 'react-redux'
 
-
-// export default class MainInterfaceCOM extends Component {
-
-//   componentDidMount() {
-
-//   }
-
-
-//   toOtherLink = (otherlink) => {
-//     return ( ()=>{
-//         window.open(otherlink)
-//     }) 
-//   }
-
-//   render() {
-//     return (
-//         <Fragment>
-//         <div className={mains.navigateArea}> 
-//           <div className={mains.navtitle}>
-//               <img className={mains.developer} src={developerImage} alt="Developer"/>
-//               <div className={mains.develpoerFont}>
-//                 Full-Stack Developer <br/> & Software Developer
-//               </div>
-//               <div className={mains.contact}>
-//                 <div>LinkedIn: <button className={mains.linkButton} onClick={this.toOtherLink("https://www.linkedin.com/in/chiyu-he-3b1695232/")}>Click me</button></div>
-//                 <div>GitHub:<button className={mains.linkButton}  onClick={this.toOtherLink("https://github.com/FinnHZ")}>Click me</button></div>
-//                 <div>E-mail: finn.he0102@gmail.com</div>
-//               </div>
-//           </div>
-//           <hr/>
-//           <div className="nav flex-column nav-pills me-3"  aria-orientation="vertical" style={{width:"100%"}}>
-//               <MyNavLink to="/HomePage">Home</MyNavLink>
-//               <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
-//               <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
-//               <MyNavLink to="/Education">Education</MyNavLink>
-//               <MyNavLink to="/Experience">Experience</MyNavLink>
-//               <MyNavLink to="/Skills">Skills & Demo</MyNavLink>
-//               <MyNavLink to="/Collection">Collection & Resource</MyNavLink>
-//               <MyNavLink to="/Management">Management</MyNavLink>
-//           </div>
-//         </div>
-        
-//         {/* {this.state.boundarytest? testboundary:<HomePage/>} */}
-//         <div className={mains.displayArea}>
-//           <Routes>
-//               <Route path="/HomePage" element={<HomePage/>}/>
-//               <Route path="/CoverLetter" element={<CoverLetterPage/>}/>
-//               <Route path="/BasicInfo" element={<BasicPage/>}/>
-//               <Route path="/Education" element={<EducationPage/>}/>
-//               <Route path="/Experience" element={<ExperiencePage/>}/>
-//               <Route path="/Skills" element={<SkillsPage/>}/>
-//               <Route path="/Collection" element={<CollectionPage/>}/>
-//               <Route path="/Management" element={<ManagementPage/>}/>
-//               <Route path="/" element={<Navigate to="/HomePage" />} />
-//           </Routes>
-//         </div>
-//       </Fragment>
-//     )
-//   }
-// }
-
-
 class MainInterfaceCOM extends Component {
 
   openOtherLink = (otherlink) => {
@@ -106,7 +44,7 @@ class MainInterfaceCOM extends Component {
           <hr/>
           <div className="nav flex-column nav-pills me-3"  aria-orientation="vertical" style={{width:"100%"}}>
               <MyNavLink to="/HomePage">Home</MyNavLink>
-              <MyNavLink to="/CoverLetter">Cover Letter</MyNavLink>
+              <MyNavLink to="/coverletter">Cover Letter</MyNavLink>
               <MyNavLink to="/BasicInfo">Basic Information</MyNavLink>
               <MyNavLink to="/Education">Education</MyNavLink>
               <MyNavLink to="/Skills">Skills</MyNavLink>
@@ -120,7 +58,7 @@ class MainInterfaceCOM extends Component {
         <div className={mains.displayArea}>
           <Routes>
               <Route path="/HomePage" element={<HomePage/>}/>
-              <Route path="/CoverLetter" element={<CoverLetterPage/>}/>
+              <Route path="/coverletter" element={<CoverLetterPage/>}/>
               <Route path="/BasicInfo" element={<BasicPage/>}/>
               <Route path="/Education" element={<EducationPage/>}/>
               <Route path="/Skills" element={<SkillsPage/>}/>

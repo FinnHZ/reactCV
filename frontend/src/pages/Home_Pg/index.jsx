@@ -30,11 +30,11 @@ class HomePage extends Component {
         </div>
       )
     }else if(this.props.loginState === "success"){
-    return (
-      <div>
-        <h1 className={homepage.title}>Welcome to Finn's world!</h1>
-      </div>
-    )}
+      return (
+        <div>
+          <h1 className={homepage.title}>Welcome to Finn's world!</h1>
+        </div>
+      )}
   }
 }
 
